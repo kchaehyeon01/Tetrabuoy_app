@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tetrabuoy_detail.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper_big">
+        <div class="wrapper_mobile">
+            <h1>테트라부이 상세</h1>
+            <div>
+                <p>부이 이름</p>
+                <div>{{ buoy.buoy_name }}</div>
+            </div>
+
+            <div>
+                <p>부이 위치</p>
+                <div>{{ buoy.location }}</div>
+            </div>
+
+            <div>
+                <p>배터리 잔량</p>
+                <div>{{ buoy.battery_remain }}</div>
+            </div>
+
+            <div>
+                <p>LED 동작 여부</p>
+                <div>{{ buoy.led_power }}</div>
+            </div>
+            <a href="{% url 'tetrabuoy_list' %}">전체 목록으로 돌아가기</a>
+            <a href="{% url 'tetrabuoy_edit' buoy.id %}">수정하기</a>
+            <a href="{% url 'tetrabuoy_delete' buoy.id %}">삭제하기</a>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="/settings_init" method="post">
+        {% csrf_token %}
+        <div class="profile_top">
+            <!-- <img src="../static/profile.png" alt="Profile Img" class="profile_img"> -->
+            <div>
+                <div class="profile_top_content">
+                    <p>이름</p>
+                    <input type="text" name="spvsr_name" value="미입력">
+                </div>
+                <div class="profile_top_content">
+                    <p>아이디</p>
+                    <input type="text" name="spvsr_id" value="미입력">
+                </div>
+            </div>
+        </div>
+
+        <div class="profile_bottom">
+            <div class="profile_bottom_1">
+                <div>
+                    <p>현재 근무 여부</p>
+                </div>
+                <div>
+                    <input type="radio" name="spvsr_onduty">근무중
+                    <!-- <input type="radio" name="spvsr_onduty">부재중 -->
+                </div>
+            </div>
+
+            <div class="profile_bottom_1">
+                <div>
+                    <p>근무 항만</p>
+                </div>
+                <div>
+                    <input type="text" name="spvsr_port">
+                    <!-- <select class="select_port">
+                        <option>인천항</option>
+                        <option>부산항</option>
+                        <option>울산항</option>
+                    </select> -->
+                </div>
+                
+            </div>
+
+            <div class="profile_bottom_2">
+                <div>
+                    <p>근무 시간 및 요일</p>
+                </div>
+                <div class="profile_bottom_2_under">
+                    <!-- <input type="time" name="usr_time" class="select_time"> -->
+                    <input type="text" name="spvsr_dutytime_start" placeholder="시작 시간">
+                    <input type="text" name="spvsr_dutytime_end" placeholder="종료 시간">
+                </div>
+                <div class="profile_bottom_2_under">
+                    <input type="checkbox" name="spvsr_duty_mon">월
+                    <input type="checkbox" name="spvsr_duty_tue">화
+                    <input type="checkbox" name="spvsr_duty_wed">수
+                    <input type="checkbox" name="spvsr_duty_thu">목
+                    <input type="checkbox" name="spvsr_duty_fri">금
+                    <input type="checkbox" name="spvsr_duty_sat">토
+                    <input type="checkbox" name="spvsr_duty_sun">일
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="savebutton">저장하기</button> 
+    </form>
+
+
+</body>
+</html>

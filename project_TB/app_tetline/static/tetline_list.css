@@ -1,0 +1,168 @@
+/* 공통 */
+body{
+    background-color: black;
+}
+
+.wrapper_big{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.wrapper_mobile{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+
+    width: 56.25vh;
+    height: 100vh;
+
+    background-color: rgba(18, 35, 71, 0.9);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.top{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+
+    position: fixed;
+
+    width: 56.25vh;
+    height: 10vh;
+    background-color: rgba(95, 105, 127, 1);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.top_half{
+    width: 25vh;
+}
+
+.top_content{
+    width: 25vh;
+    height: 4vh;
+    color: white;
+
+    font-size: 1.8vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.middle{
+    position: absolute;
+    top: 11vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 80vh;
+    
+}
+
+.middle_top{
+    width: 56.25vh;
+}
+
+.middle_top_buoys{
+    display: flex;
+    flex-direction: column;
+}
+
+.middle_top_buoy{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0vh;
+}
+
+.each_buoy{
+    height: 8vh;
+    margin: 1vh;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.middle_top_buoy{
+}
+
+.middle_bottom{
+    width: 56.25vh;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    position: fixed;
+    bottom: 10vh;
+
+}
+
+.add_button{
+    margin: 10px;
+    background-color: grey;
+}
+
+.mode_button{
+    margin: 10px;
+    background-color: grey;
+}
+
+
+.bottom{
+    position: fixed;
+    bottom: 0px;
+    width: 56.25vh;
+    height: 10vh;
+    background-color: #D9D9D9;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tab_button_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 13vh;
+}
+
+.tab_button{
+    color: #000000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tab_button_name{
+    height: 2vh;
+    font-weight: 2vh;
+    margin: 0vh;
+}
+
+.icon{
+    width: 5vh;
+    height: 5vh;
+}

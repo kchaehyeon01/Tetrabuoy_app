@@ -1,0 +1,35 @@
+/* 공통 */
+body{
+    background-color: black;
+}
+
+.wrapper_big{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.wrapper_mobile{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+
+    width: 56.25vh;
+    height: 100vh;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

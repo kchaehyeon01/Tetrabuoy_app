@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tetline_list.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper_big">
+        <div class="wrapper_mobile">
+
+            <div class="top">
+                <div class="top_half">
+                    <div class="top_content">
+                        <p>현위치 :</p>
+                        <p>00방파제(센서수정)</p>
+                    </div>
+                    <div class="top_content">
+                        <p>기온 :</p>
+                        <p>기온(센서수정)</p>
+                    </div>
+                </div>
+                <div class="top_half">
+                    <div class="top_content">
+                        <p>테트라부이 :</p>
+                        <p>부이개수(센서수정)</p>
+                    </div>
+                    <div class="top_content">
+                        <p>테트라인 :</p>
+                        <p>라인개수(센서수정)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle">
+
+                <div class="middle_top">
+                    <div class="middle_top_buoys">
+                        <ul class="middle_top_buoy">
+                            {% for line in lines %}
+                            <a class="middle_top_buoy" href="{% url 'tetline_detail' line.id %}">
+                                <li class="each_buoy">
+                                    {{ line.line_name }}
+                                    {{ line.location }}
+                                    {{ line.led_power }}
+                                    {{ line.sound_power }}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="middle_bottom">
+                    <div>
+                        <a class="add_button" href="{% url 'tetline_add' %}">라인 등록</a>
+                    </div>
+    
+                    <div>
+                        <a class="mode_button" href="{% url 'tetline_map' %}">모드 map으로 바꾸기</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bottom">
+                
+                <a class="tab_button" href="{% url 'tetrabuoy_list' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_tetrabuoy.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">테트라부이</p>
+                    </div>
+                </a>
+
+                
+                <a class="tab_button" href="{% url 'tetline_list' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_tetline.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">테트라인</p>
+                    </div>
+                </a>
+                
+                <a class="tab_button" href="{% url 'data_main' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_data.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">데이터</p>
+                    </div>
+                </a>
+
+                <a class="tab_button" href="{% url 'settings_main' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_settings.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">관리</p>    
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

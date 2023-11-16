@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tetline_add.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper_big">
+        <div class="wrapper_mobile">
+            <h1>테트라인 등록</h1>
+            <a class="x_button" href="{% url 'tetrabuoy_list' %}">X</a>
+            <form action="/tetline_add" method="post">
+                {% csrf_token %}
+                <div>
+                    <p>이름</p>
+                    <input type="text" name="line_name">
+                </div>
+        
+                <div>
+                    <p>위치 (센서에서 받아와야 함)</p>
+                    <input type="text" name="location">
+                </div>
+        
+                <div>
+                    <p>LED 동작 여부(센서에서 받아와야 함)</p>
+                    <input type="text" name="led_power">
+                </div>
+
+                <div>
+                    <p>소리 동작 여부(센서에서 받아와야 함)</p>
+                    <input type="text" name="sound_power">
+                </div>
+
+                <button type="submit">라인 등록하기</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <div>
+            <label for="buoy_name">부이 이름</label>
+            <input type="text" id="buoy_name" name="buoy_name" value="{{ buoy.buoy_name }}">
+        </div>
+
+        <div>
+            <label for="location">부이 위치</label>
+            <input type="text" id="location" name="location" value="{{ buoy.location }}">
+        </div>
+        <div>
+            <label for="battery_remain">배터리 잔량</label>
+            <input type="text" id="battery_remain" name="battery_remain" value="{{ buoy.battery_remain }}">
+        </div>
+        <div>
+            <label for="led_power">LED 동작 여부</label>
+            <input type="text" id="led_power" name="led_power" value="{{ buoy.led_power }}">
+        </div>
+
+        </div>
+        <button type="submit">수정하기</button>
+    </form>
+</body>
+</html>

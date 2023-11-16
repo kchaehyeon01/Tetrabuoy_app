@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tetrabuoy_list.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper_big">
+        <div class="wrapper_mobile">
+
+            <div class="top">
+                <div class="top_half">
+                    <div class="top_content">
+                        <p>현위치 :</p>
+                        <p>00방파제</p>
+                    </div>
+                    <div class="top_content">
+                        <p>기온 :</p>
+                        <p>18</p>
+                    </div>
+                </div>
+                <div class="top_half">
+                    <div class="top_content">
+                        <p>테트라부이 :</p>
+                        <p>8/10</p>
+                    </div>
+                    <div class="top_content">
+                        <p>테트라인 :</p>
+                        <p>3/5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle">
+
+                <div class="middle_top">
+                    <div class="middle_top_buoys">
+                        <ul class="middle_top_buoy">
+                            {% for buoy in buoys %}
+                            <a class="middle_top_buoy" href="{% url 'tetrabuoy_detail' buoy.id %}">
+                                <li class="each_buoy">
+                                    <div class="each_buoy_content">
+                                        <img src="../static/icon_tet1.png" class="icon_for_content">
+                                        <h3>{{ buoy.buoy_name }}</h3>
+                                        
+                                        <div>
+                                            <h5>위치 : {{ buoy.location }}</h5>
+                                            <h5>배터리 : {{ buoy.battery_remain }}</h5>
+                                            <h5>LED : {{ buoy.led_power }}</h5>
+                                        </div> 
+                                    </div>
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="middle_bottom">
+                    <div>
+                        <a class="add_button" href="{% url 'tetrabuoy_add' %}">부이 등록</a>
+                    </div>
+    
+                    <div>
+                        <a class="add_button" href="{% url 'tetrabuoy_map' %}">지도 모드</a>
+                    </div>
+
+
+<!-- 
+                    <div>
+                        <input type="checkbox" id="toggle" hidden>
+                        <label for="toggle" class="toggleSwitch">
+                            <p class="map_mode">지도</p>
+                            <a class="mode_button" href="{% url 'tetrabuoy_map' %}">
+                                <span class="toggleButton"></span>
+                            </a>
+                        </label>
+                    </div> -->
+
+                </div>
+
+            </div>
+
+            <div class="bottom">
+                
+                <a class="tab_button" href="{% url 'tetrabuoy_list' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_tetrabuoy.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">테트라부이</p>
+                    </div>
+                </a>
+
+                
+                <a class="tab_button" href="{% url 'tetline_list' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_tetline.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">테트라인</p>
+                    </div>
+                </a>
+                
+                <a class="tab_button" href="{% url 'data_main' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_data.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">데이터</p>
+                    </div>
+                </a>
+
+                <a class="tab_button" href="{% url 'settings_main' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_settings.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">관리</p>    
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

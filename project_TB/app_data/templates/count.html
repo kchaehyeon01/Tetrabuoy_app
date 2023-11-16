@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    count.html 만들었어요!
+    <h1>글자를 입력해보세요</h1>
+    <form action="{% url 'data_result' %}" method="post">{% csrf_token %}
+        <textarea name="text" cols="30" rows="10"></textarea>
+        <input type="submit" value="제출">
+    </form>
+</body>
+</html>

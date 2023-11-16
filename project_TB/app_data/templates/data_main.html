@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'data_main.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <script>
+        // function success({ coords, timestamp }) {
+        //     const latitude = coords.latitude;   // 위도
+        //     const longitude = coords.longitude; // 경도
+            
+        //     alert(`위도: ${latitude}, 경도: ${longitude}, 위치 반환 시간: ${timestamp}`);
+        // }
+        // function getUserLocation() {
+        //     if (!navigator.geolocation) {
+        //         throw "위치 정보가 지원되지 않습니다.";
+        //     }
+        //     navigator.geolocation.watchPosition(success);
+        // }
+        // getUserLocation();
+
+        window.navigator.geolocation.getCurrentPosition( function(position){
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            document.getElementById('main_loc'),innerHTML = lat + ", " + lng;
+        });
+
+
+
+    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script type="text/javascript" src="/static/data_main.js"></script>
+
+    <div class="wrapper_big">
+        <div class="wrapper_mobile">
+
+            <div class="top">
+                <div class="top_half">
+                    <div class="top_content">
+                        <p>현위치 :</p>
+                        <p>00방파제</p>
+                    </div>
+                    <div class="top_content">
+                        <p>기온 :</p>
+                        <p>18</p>
+                    </div>
+                </div>
+                <div class="top_half">
+                    <div class="top_content">
+                        <p>테트라부이 :</p>
+                        <p>8/10</p>
+                    </div>
+                    <div class="top_content">
+                        <p>테트라인 :</p>
+                        <p>3/5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle">
+
+                <div class="middle_content">
+                    <p class="middle_content_title">날씨</p>
+                    <p class="middle_content_subtitle">일기예보</p>
+                    <img src="../static/weather2.png" alt="날씨" class="data_img"/>
+                    <p class="middle_content_subtitle">테트라부이 측정값</p>
+                    <img src="../static/temperature.png" alt="날씨" class="data_img"/>
+                </div>
+                
+                <div class="middle_content">
+                    <p class="middle_content_title">테트라인 출입자 수</p>
+                    <img src="../static/num_of_enter.png" alt="출입자" class="data_img"/>
+                </div>
+
+                <div class="middle_content">
+                    <p class="middle_content_title">풍량</p>
+                    <img src="../static/weather1.png" alt="날씨" class="data_img"/>
+                </div>
+
+            </div>
+
+            <div class="bottom">
+
+                <a class="tab_button" href="{% url 'tetrabuoy_list' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_tetrabuoy.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">테트라부이</p>
+                    </div>
+                </a>
+
+
+                <a class="tab_button" href="{% url 'tetline_list' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_tetline.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">테트라인</p>
+                    </div>
+                </a>
+
+                <a class="tab_button" href="{% url 'data_main' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_data.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">데이터</p>
+                    </div>
+                </a>
+
+                <a class="tab_button" href="{% url 'settings_main' %}">
+                    <div class="tab_button_div">
+                        <img src="../static/icon_settings.svg" alt="부이아이콘" class="icon"/>
+                        <p class="tab_button_name">관리</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

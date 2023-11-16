@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tetline_map.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper_big">
+        <div class="wrapper_mobile">
+
+            <div class="top">
+                <div class="top_half">
+                    <div class="top_content">현위치</div>
+                    <div class="top_content">기온</div>
+                </div>
+                <div class="top_half">
+                    <div class="top_content">테트라부이</div>
+                    <div class="top_content">테트라인</div>
+                </div>
+            </div>
+
+            <div class="middle">
+                <p1>메인 내용</p1>
+
+                <div>
+                    <a class="mode_button" href="{% url 'tetrabuoy_add' %}">부이 등록</a>
+                </div>
+
+                <div>
+                    <a class="mode_button" href="{% url 'tetline_list' %}">모드 list로 바꾸기</a>
+                </div>
+
+            </div>
+
+            <div class="bottom">
+                <a class="tab_button" href="{% url 'tetrabuoy_map' %}">
+                    <p>테트라부이</p>
+                </a>
+                <a class="tab_button" href="{% url 'tetline_map' %}">
+                    <p>테트라인</p>
+                </a>
+                <a class="tab_button" href="{% url 'data_main' %}">
+                    <p>데이터</p>
+                </a>
+                <a class="tab_button" href="{% url 'settings_main' %}">
+                    <p>관리</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
